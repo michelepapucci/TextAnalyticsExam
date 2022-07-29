@@ -1,6 +1,6 @@
 import pandas as pd
-from training_data_parser import TrainingDataParser
-from training_data_filter import TrainingDataFilter
+from src.libraries.training_data_parser import TrainingDataParser
+from src.libraries.training_data_filter import TrainingDataFilter
 
 
 def main():
