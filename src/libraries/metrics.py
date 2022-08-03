@@ -58,6 +58,7 @@ class Metrics:
         if output_path is not None:
             with open(f"{output_path}classification_report.txt", "w") as output:
                 output.write(report)
+        self.plot_multiclass_roc()
 
 
 if __name__ == '__main__':
