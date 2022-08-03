@@ -71,5 +71,5 @@ class NLMExperiment:
                 output.write("y_true\ty_proba\ty_pred\n")
                 predictions = self.test_results.predictions
                 predicted_classes = np.argmax(predictions, axis=-1)
-                for y_true, y_proba, y_pred in zip(self.test_results.label_ids, predicted_classes):
+                for y_true, y_proba, y_pred in zip(self.test_results.label_ids, predictions, predicted_classes):
                     output.write(str(y_true) + '\t' + str(y_proba) + str(y_pred) + '\n')
