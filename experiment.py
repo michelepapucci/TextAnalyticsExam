@@ -13,7 +13,8 @@ class NLMExperiment:
 
         self.dataset = None
         self.trainer = None
-        self.analysis_result = None
+        self.test_results = None
+        self.evaluation_results = None
         self.training_args = None
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -61,4 +62,7 @@ class NLMExperiment:
         self.trainer.train()
 
     def evaluate(self):
-        self.analysis_result = self.trainer.evaluate()
+        self.evaluation_results = self.trainer.evaluate()
+
+    def test(self, dataset_to_test):
+        self.test_results = self.trainer.predict(dataset_to_test)
