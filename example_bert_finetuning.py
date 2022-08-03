@@ -1,4 +1,5 @@
 from src.libraries.experiment import NLMExperiment
+from src.libraries.metrics import Metrics
 
 
 def gender_to_int(row):
@@ -19,6 +20,8 @@ def main():
     print(experiment.evaluation_results)
 
     experiment.test(experiment.dataset['val'], "output/bert_for_gender_predictions.tsv")
+    m = Metrics("output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
+    m.report("output/")
 
 
 if __name__ == '__main__':
