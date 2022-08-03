@@ -16,6 +16,7 @@ def main():
                                to_rename={'Gender': 'label', 'Sentence': 'sentence'})
     experiment.fine_tune()
     experiment.evaluate()
+    print(experiment.evaluation_results)
 
 
 if __name__ == '__main__':
