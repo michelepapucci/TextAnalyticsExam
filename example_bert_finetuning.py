@@ -1,4 +1,4 @@
-from experiment import NLMExperiment
+from src.libraries.experiment import NLMExperiment
 
 
 def gender_to_int(row):
