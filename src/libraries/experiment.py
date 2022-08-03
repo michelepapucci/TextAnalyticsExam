@@ -68,8 +68,8 @@ class NLMExperiment:
         self.test_results = self.trainer.predict(dataset_to_test)
         if path_to_file:
             with open(path_to_file, 'w') as output:
-                output.write("y_true\ty_pred\n")
+                output.write("y_true\ty_proba\ty_pred\n")
                 predictions = self.test_results.predictions
-                predictions = np.argmax(predictions, axis=-1)
-                for y_true, y_pred in zip(self.test_results.label_ids, predictions):
-                    output.write(str(y_true) + '\t' + str(y_pred) + '\n')
+                predicted_classes = np.argmax(predictions, axis=-1)
+                for y_true, y_proba, y_pred in zip(self.test_results.label_ids, predicted_classes):
+                    output.write(str(y_true) + '\t' + str(y_proba) + str(y_pred) + '\n')

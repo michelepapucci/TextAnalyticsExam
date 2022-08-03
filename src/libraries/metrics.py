@@ -1,10 +1,13 @@
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, roc_curve, auc, roc_auc_score
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 class Metrics:
 
     def __init__(self, prediction_path, labels=None):
+        self.y_proba = None
         self.y_pred = None
         self.y_true = None
         self.predictions_path = prediction_path
@@ -16,6 +19,36 @@ class Metrics:
         df = pd.read_csv(self.predictions_path, sep="\t")
         self.y_true = df['y_true'].values
         self.y_pred = df['y_pred'].values
+        self.y_proba = df['y_proba'].values
+
+    def plot_multiclass_roc(self, title='ROC', figsize=(17, 6)):
+        # structures
+        n_classes = len(list(set(self.y_true)))
+        fpr = dict()
+        tpr = dict()
+        roc_auc = dict()
+
+        # calculate dummies once
+        y_test_dummies = pd.get_dummies(self.y_true, drop_first=False).values
+        for i in range(n_classes):
+            fpr[i], tpr[i], _ = roc_curve(y_test_dummies[:, i], self.y_proba[:, i])
+            roc_auc[i] = auc(fpr[i], tpr[i])
+
+        # roc for each class
+        fig, ax = plt.subplots(figsize=figsize)
+        ax.plot([0, 1], [0, 1], 'k--')
+        ax.set_xlim([0.0, 1.0])
+        ax.set_ylim([0.0, 1.05])
+        ax.set_xlabel('False Positive Rate')
+        ax.set_ylabel('True Positive Rate')
+        ax.set_title(title, fontsize=30)
+        for i in range(n_classes):
+            ax.plot(fpr[i], tpr[i], label=f'Activity {i + 1}: AUC {round(roc_auc[i], 4)}')
+        ax.legend(loc="best")
+        plt.legend(fontsize=15)
+        ax.grid(alpha=.4)
+        sns.despine()
+        plt.savefig('output/roc.png', format='png', dpi=70)
 
     def report(self, output_path=None):
         report = classification_report(self.y_true, self.y_pred) if self.labels is None \
