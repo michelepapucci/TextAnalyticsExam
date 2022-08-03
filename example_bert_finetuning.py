@@ -18,6 +18,8 @@ def main():
     experiment.evaluate()
     print(experiment.evaluation_results)
 
+    experiment.test(experiment.dataset['val'], "output/bert_for_gender_predictions.tsv")
+
 
 if __name__ == '__main__':
     main()

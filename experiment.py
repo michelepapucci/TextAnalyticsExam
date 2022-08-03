@@ -64,5 +64,12 @@ class NLMExperiment:
     def evaluate(self):
         self.evaluation_results = self.trainer.evaluate()
 
-    def test(self, dataset_to_test):
+    def test(self, dataset_to_test, path_to_file=False):
         self.test_results = self.trainer.predict(dataset_to_test)
+        if path_to_file:
+            with open(path_to_file, 'w') as output:
+                output.write("y_true\ty_pred\n")
+                predictions = self.test_results.predictions
+                predictions = np.argmax(predictions, axis=-1)
+                for y_true, y_pred in zip(self.test_results.label_ids, predictions):
+                    output.write(str(y_true) + '\t' + str(y_pred) + '\n')
