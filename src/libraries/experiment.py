@@ -4,6 +4,8 @@ import numpy as np
 from transformers import AutoModelForSequenceClassification
 
 
+# TODO add the ability to save models and load them.
+
 class NLMExperiment:
 
     def __init__(self, model_name, dataset_path, metrics):
@@ -69,6 +71,8 @@ class NLMExperiment:
         if path_to_file:
             with open(path_to_file, 'w') as output:
                 output.write("y_true\ty_proba\ty_pred\n")
+                # TODO: predictions isn't iterable zip doesn't accept the prediction. Check what np.max does.
+                # we need to have predictions to be a 1d array containing the max probability. 
                 predictions = np.max(self.test_results.predictions)
                 predicted_classes = np.argmax(predictions, axis=-1)
                 for y_true, y_proba, y_pred in zip(self.test_results.label_ids, predictions, predicted_classes):
