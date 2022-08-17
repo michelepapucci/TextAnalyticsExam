@@ -2,7 +2,7 @@ from src.libraries.metrics import Metrics
 
 
 def main():
-    m = Metrics("output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
+    m = Metrics("../output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
     m.report("output/")
 
 
