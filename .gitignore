@@ -134,3 +134,5 @@ dmypy.json
 
 output/
 models/
+test_trainer/
+tmp_trainer/

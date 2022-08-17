@@ -1,5 +1,5 @@
-from src.libraries.experiment import NLMExperiment
-from src.libraries.metrics import Metrics
+from libraries.Experiment.experiment import NLMExperiment
+from libraries.Experiment.metrics import Metrics
 
 
 def gender_to_int(row):
@@ -10,7 +10,15 @@ def gender_to_int(row):
     return row
 
 
-def main():
+def topic_to_int(row):
+    pass
+
+
+def age_range_to_int(row):
+    pass
+
+
+def gender():
     experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "../src/data/post_processed/training_filtered.csv",
                                'accuracy')
     experiment.process_dataset(functions_to_map=[gender_to_int], to_drop=['Age', 'Id', 'Topic'],
@@ -23,8 +31,39 @@ def main():
     m = Metrics("../output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
     m.report("output/")
 
-    # TODO add test-set
-    # TODO add topic and age predictions
+
+def topic():
+    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "../src/data/post_processed/training_filtered.csv",
+                               'accuracy')
+    experiment.process_dataset(functions_to_map=[topic_to_int], to_drop=['Age', 'Id', 'Gender'],
+                               to_rename={'Topic': 'label', 'Sentence': 'sentence'})
+    experiment.fine_tune()
+    experiment.evaluate()
+    print(experiment.evaluation_results)
+
+    experiment.test(experiment.dataset['val'], "output/bert_for_topic_predictions.tsv")
+    m = Metrics("../output/bert_for_gender_predictions.tsv", [])  # TODO
+    m.report("output/")
+
+
+def age():
+    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "../src/data/post_processed/training_filtered.csv",
+                               'accuracy')
+    experiment.process_dataset(functions_to_map=[age_range_to_int], to_drop=['Topic', 'Id', 'Gender'],
+                               to_rename={'Age': 'label', 'Sentence': 'sentence'})
+    experiment.fine_tune()
+    experiment.evaluate()
+    print(experiment.evaluation_results)
+
+    experiment.test(experiment.dataset['val'], "output/bert_for_gender_predictions.tsv")
+    m = Metrics("../output/bert_for_age_predictions.tsv", [])  # TODO
+    m.report("output/")
+
+
+def main():
+    gender()
+    topic()
+    age()
 
 
 if __name__ == '__main__':
