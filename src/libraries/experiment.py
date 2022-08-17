@@ -25,6 +25,15 @@ class NLMExperiment:
     def load_from_csv(self):
         return load_dataset('csv', data_files=self.dataset_path)
 
+    def load_model(self, directory="model/"):
+        self.model = AutoModelForSequenceClassification.from_pretrained(directory)
+        self.trainer = Trainer(
+            model=self.model,
+            train_dataset=self.dataset['train'],
+            eval_dataset=self.dataset['val'],
+            compute_metrics=self.compute_metrics
+        )
+
     def tokenize_function(self, row):
         return self.tokenizer(row['Sentence'], padding="max_length", truncation=True, max_length=128)
 
@@ -66,14 +75,15 @@ class NLMExperiment:
     def evaluate(self):
         self.evaluation_results = self.trainer.evaluate()
 
+    def save_model(self, output="model/"):
+        self.model.save_pretrained(output)
+
     def test(self, dataset_to_test, path_to_file=False):
         self.test_results = self.trainer.predict(dataset_to_test)
         if path_to_file:
             with open(path_to_file, 'w') as output:
                 output.write("y_true\ty_proba\ty_pred\n")
-                # TODO: predictions isn't iterable zip doesn't accept the prediction. Check what np.max does.
-                # we need to have predictions to be a 1d array containing the max probability. 
-                predictions = np.max(self.test_results.predictions)
-                predicted_classes = np.argmax(predictions, axis=-1)
-                for y_true, y_proba, y_pred in zip(self.test_results.label_ids, predictions, predicted_classes):
-                    output.write(str(y_true) + '\t' + str(y_proba) + str(y_pred) + '\n')
+                predicted_classes = np.argmax(self.test_results.predictions, axis=-1)
+                probas = np.amax(self.test_results.predictions, axis=-1)
+                for y_true, y_proba, y_pred in zip(self.test_results.label_ids, probas, predicted_classes):
+                    output.write(str(y_true) + '\t' + str(y_proba) + "\t" + str(y_pred) + '\n')

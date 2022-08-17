@@ -31,7 +31,7 @@ class Metrics:
         # calculate dummies once
         y_test_dummies = pd.get_dummies(self.y_true, drop_first=False).values
         for i in range(n_classes):
-            fpr[i], tpr[i], _ = roc_curve(y_test_dummies[:, i], self.y_proba[:, i])
+            fpr[i], tpr[i], _ = roc_curve(y_test_dummies[:, i], self.y_proba)
             roc_auc[i] = auc(fpr[i], tpr[i])
 
         # roc for each class
@@ -43,7 +43,7 @@ class Metrics:
         ax.set_ylabel('True Positive Rate')
         ax.set_title(title, fontsize=30)
         for i in range(n_classes):
-            ax.plot(fpr[i], tpr[i], label=f'Activity {i + 1}: AUC {round(roc_auc[i], 4)}')
+            ax.plot(fpr[i], tpr[i], label=f"{self.labels[i]}: AUC {round(roc_auc[i], 4)}")
         ax.legend(loc="best")
         plt.legend(fontsize=15)
         ax.grid(alpha=.4)
@@ -59,6 +59,7 @@ class Metrics:
             with open(f"{output_path}classification_report.txt", "w") as output:
                 output.write(report)
         self.plot_multiclass_roc()
+
 
 
 if __name__ == '__main__':
