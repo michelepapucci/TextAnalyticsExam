@@ -1,4 +1,7 @@
-from src.libraries.metrics import Metrics
+import sys
+sys.path.insert(0, '../')
+
+from libraries.Experiment.metrics import Metrics
 
 
 def main():

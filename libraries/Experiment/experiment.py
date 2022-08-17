@@ -19,11 +19,13 @@ class NLMExperiment:
         self.evaluation_results = None
         self.training_args = None
 
+        self.test_dataset = None
+
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
-    def load_from_csv(self):
-        return load_dataset('csv', data_files=self.dataset_path)
+    def load_from_csv(self, dataset_path):
+        return load_dataset('csv', data_files=dataset_path)
 
     def load_model(self, directory="model/"):
         self.model = AutoModelForSequenceClassification.from_pretrained(directory)
@@ -38,8 +40,7 @@ class NLMExperiment:
         return self.tokenizer(row['Sentence'], padding="max_length", truncation=True, max_length=128)
 
     def process_dataset(self, functions_to_map=None, to_rename={}, to_drop=[]):
-
-        raw = self.load_from_csv()
+        raw = self.load_from_csv(self.dataset_path)
         test = raw['train'].train_test_split(0.2)
         dataset = DatasetDict({'train': raw['train'], 'val': test['test']})
         if functions_to_map is not None:
@@ -77,6 +78,17 @@ class NLMExperiment:
 
     def save_model(self, output="model/"):
         self.model.save_pretrained(output)
+
+    def set_test_dataset(self, test_dataset_path, functions_to_map=None, to_rename={}, to_drop=[]):
+        raw = self.load_from_csv(test_dataset_path)
+        test = DatasetDict({'test': raw['train']})
+        if functions_to_map is not None:
+            for function in functions_to_map:
+                test = test.map(function)
+        tokenized_test = test.map(self.tokenize_function, batched=True)
+        renamed_d = tokenized_test.rename_columns(to_rename)
+        removed_d = renamed_d.remove_columns(to_drop)
+        self.test_dataset = removed_d
 
     def test(self, dataset_to_test, path_to_file=False):
         self.test_results = self.trainer.predict(dataset_to_test)

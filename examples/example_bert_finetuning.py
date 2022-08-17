@@ -1,5 +1,8 @@
-from src.libraries.experiment import NLMExperiment
-from src.libraries.metrics import Metrics
+import sys
+sys.path.insert(0, '../')
+
+from libraries.Experiment.experiment import NLMExperiment
+from libraries.Experiment.metrics import Metrics
 
 
 def gender_to_int(row):

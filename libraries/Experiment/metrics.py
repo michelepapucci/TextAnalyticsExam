@@ -63,5 +63,5 @@ class Metrics:
 
 
 if __name__ == '__main__':
-    m = Metrics("../../output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
+    m = Metrics("../../../output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
     m.report("")
