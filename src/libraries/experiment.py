@@ -72,8 +72,10 @@ class NLMExperiment:
             with open(path_to_file, 'w') as output:
                 output.write("y_true\ty_proba\ty_pred\n")
                 # TODO: predictions isn't iterable zip doesn't accept the prediction. Check what np.max does.
-                # we need to have predictions to be a 1d array containing the max probability. 
-                predictions = np.max(self.test_results.predictions)
+                # we need to have predictions to be a 1d array containing the max probability.
+                predictions = []
+                for pred in self.test_results.predictions:
+                    predictions += np.max(pred)
                 predicted_classes = np.argmax(predictions, axis=-1)
                 for y_true, y_proba, y_pred in zip(self.test_results.label_ids, predictions, predicted_classes):
                     output.write(str(y_true) + '\t' + str(y_proba) + str(y_pred) + '\n')
