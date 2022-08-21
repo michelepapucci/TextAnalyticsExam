@@ -23,7 +23,7 @@ def main():
     print(experiment.evaluation_results)
 
     experiment.test(experiment.dataset['val'], "output/bert_for_gender_predictions.tsv")
-    m = Metrics("../output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
+    m = Metrics("../output/gender/bert_for_gender_predictions.tsv", ['Male', 'Female'])
     m.report("output/")
 
 
