@@ -26,3 +26,25 @@ Gender test set results:
     macro avg       0.78      0.74     0.76      5055
     weighted avg    0.84      0.85     0.84      5055
 
+
+### 21.08.2022
+
+Topic test set result:
+
+                         precision    recall  f1-score   support
+    
+                  ANIME       0.68      0.79      0.73      1078
+              AUTO-MOTO       0.66      0.72      0.69       985
+                  BIKES       0.00      0.00      0.00       155
+            CELEBRITIES       0.69      0.58      0.63       361
+          ENTERTAINMENT       0.57      0.34      0.43       115
+    MEDICINE-AESTHETICS       0.66      0.58      0.62       137
+        METAL-DETECTING       0.54      0.51      0.53       348
+                 NATURE       0.61      0.44      0.51       122
+                  SMOKE       0.67      0.68      0.67       377
+                 SPORTS       0.68      0.76      0.72      1292
+             TECHNOLOGY       1.00      0.01      0.02        85
+    
+               accuracy                           0.66      5055
+              macro avg       0.62      0.49      0.50      5055
+           weighted avg       0.65      0.66      0.64      5055

@@ -21,7 +21,7 @@ class Metrics:
         self.y_pred = df['y_pred'].values
         self.y_proba = df['y_proba'].values
 
-    def plot_multiclass_roc(self, title='ROC', figsize=(17, 6)):
+    def plot_multiclass_roc(self, output_path="/output/", title='ROC', figsize=(17, 6)):
         # structures
         n_classes = len(list(set(self.y_true)))
         fpr = dict()
@@ -48,7 +48,7 @@ class Metrics:
         plt.legend(fontsize=15)
         ax.grid(alpha=.4)
         sns.despine()
-        plt.savefig('output/roc.png', format='png', dpi=70)
+        plt.savefig(f'{output_path}roc.png', format='png', dpi=70)
 
     def report(self, output_path=None):
         report = classification_report(self.y_true, self.y_pred) if self.labels is None \
@@ -58,10 +58,9 @@ class Metrics:
         if output_path is not None:
             with open(f"{output_path}classification_report.txt", "w") as output:
                 output.write(report)
-        self.plot_multiclass_roc()
-
+        self.plot_multiclass_roc(output_path)
 
 
 if __name__ == '__main__':
-    m = Metrics("../../output/bert_for_gender_predictions.tsv", ['Male', 'Female'])
+    m = Metrics("../../output/gender/bert_for_gender_predictions.tsv", ['Male', 'Female'])
     m.report("")
