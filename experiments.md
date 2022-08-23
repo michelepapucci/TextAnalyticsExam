@@ -15,7 +15,7 @@ Primo BERT addestrato su Gender, risultati su evaluation set:
 ### 17.08.2022
 ROC curve funzionante, anche se i risultati sono strani.
 
-Gender test set results:
+Bert Gender test set results:
 
               precision    recall  f1-score   support
 
@@ -29,7 +29,7 @@ Gender test set results:
 
 ### 21.08.2022
 
-Topic test set result:
+Bert Topic test set result:
 
                          precision    recall  f1-score   support
     
@@ -48,3 +48,23 @@ Topic test set result:
                accuracy                           0.66      5055
               macro avg       0.62      0.49      0.50      5055
            weighted avg       0.65      0.66      0.64      5055
+
+
+### 23.08.2022
+
+Bert Age test set results:
+
+                  precision    recall  f1-score   support
+    
+            0-19       0.38      0.29      0.33       465
+           20-29       0.38      0.55      0.45      1534
+           30-39       0.27      0.23      0.25      1157
+           40-49       0.24      0.23      0.24       905
+          50-100       0.41      0.26      0.32       994
+    
+        accuracy                           0.34      5055
+       macro avg       0.34      0.31      0.32      5055
+    weighted avg       0.34      0.34      0.33      5055
+
+
+
