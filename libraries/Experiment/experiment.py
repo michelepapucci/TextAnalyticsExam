@@ -4,8 +4,6 @@ import numpy as np
 from transformers import AutoModelForSequenceClassification
 
 
-# TODO add the ability to save models and load them.
-
 class NLMExperiment:
 
     def __init__(self, model_name, dataset_path, metrics, num_labels=2):
@@ -44,7 +42,7 @@ class NLMExperiment:
     def process_dataset(self, functions_to_map=None, to_rename={}, to_drop=[]):
         raw = self.load_from_csv(self.dataset_path)
         test = raw['train'].train_test_split(0.2)
-        dataset = DatasetDict({'train': raw['train'], 'val': test['test']})
+        dataset = DatasetDict({'train': raw['train'], 'val': test['test']}) # TODO: Guardare bene
         if functions_to_map is not None:
             for function in functions_to_map:
                 dataset = dataset.map(function)
