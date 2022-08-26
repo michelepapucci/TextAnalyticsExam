@@ -28,6 +28,14 @@ def preprocess_output_label(examples, target):
     return labels["input_ids"]
 
 
+def gender_to_word(row):
+    if row['Gender'] == 'm':
+        row['Gender'] = "Uomo"
+    else:
+        row['Gender'] = "Donna"
+    return row
+
+
 def gender_to_int(row):
     with tokenizer.as_target_tokenizer():
         tokenized = tokenizer(row['Gender'], max_length=512, truncation=True)
@@ -103,7 +111,7 @@ def print_dataset(dataset):
 def main():
     data_collator = DataCollatorForSeq2Seq(tokenizer)
     dataset = process_dataset("../src/data/post_processed/training_filtered.csv",
-                              functions_to_map=[prefix_classify_gender, gender_to_int], to_drop=['Age', 'Id', 'Topic'],
+                              functions_to_map=[prefix_classify_gender, gender_to_word, gender_to_int], to_drop=['Age', 'Id', 'Topic'],
                               to_rename={'Gender': 'labels', 'Sentence': 'sentence'})
     print_dataset(dataset)
 
@@ -142,5 +150,24 @@ def main():
     trainer.save_model(model_dir + "models/it5/final_model")
 
 
+def test():
+    model_dir = "../models/it5/checkpoint-2500/"
+
+    text = """Classifica genere: Amici dove posso scambiar due chiacchiere con qualcuno sul GULP ? Questo forum va bene? Ciao !"""
+
+    tokenizer = AutoTokenizer.from_pretrained(model_dir)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
+
+    inputs = [text]
+
+    inputs = tokenizer(inputs, max_length=512, truncation=True, padding=True, return_tensors="pt")
+    output = model.generate(**inputs, do_sample=True)
+
+    decoded_output = tokenizer.batch_decode(output, skip_special_tokens=True)[0]
+
+    print(decoded_output)
+
+
 if __name__ == '__main__':
     main()
+    test()
