@@ -19,33 +19,34 @@ def load_from_csv(dataset_path):
 
 
 def tokenize_function(row):
-    return tokenizer(row['Sentence'], max_length=512, truncation=True)
+    return tokenizer(row['Sentence'], truncation=True)
 
 
 def preprocess_output_label(examples, target):
     with tokenizer.as_target_tokenizer():
-        labels = tokenizer(examples[target], max_length=512, truncation=True)
+        labels = tokenizer(examples[target], truncation=True)
     return labels["input_ids"]
 
 
 def gender_to_word(row):
-    if row['Gender'] == 'm':
-        row['Gender'] = "Uomo"
+    if row['Gender'] == 'M':
+        row['Gender'] = "uomo"
     else:
-        row['Gender'] = "Donna"
+        row['Gender'] = "donna"
+    print(row['Gender'])
     return row
 
 
 def gender_to_int(row):
     with tokenizer.as_target_tokenizer():
-        tokenized = tokenizer(row['Gender'], max_length=512, truncation=True)
+        tokenized = tokenizer(row['Gender'], truncation=True)
     row['Gender'] = tokenized["input_ids"]
     return row
 
 
 def topic_to_int(row):
     with tokenizer.as_target_tokenizer():
-        tokenized = tokenizer(row['Topic'], padding="max_length", max_length=512, truncation=True)
+        tokenized = tokenizer(row['Topic'], padding="max_length", truncation=True)
     row['Topic'] = tokenized["input_ids"]
     return row
 
@@ -111,7 +112,8 @@ def print_dataset(dataset):
 def main():
     data_collator = DataCollatorForSeq2Seq(tokenizer)
     dataset = process_dataset("../src/data/post_processed/training_filtered.csv",
-                              functions_to_map=[prefix_classify_gender, gender_to_word, gender_to_int], to_drop=['Age', 'Id', 'Topic'],
+                              functions_to_map=[prefix_classify_gender, gender_to_word, gender_to_int],
+                              to_drop=['Age', 'Id', 'Topic'],
                               to_rename={'Gender': 'labels', 'Sentence': 'sentence'})
     print_dataset(dataset)
 
@@ -160,7 +162,7 @@ def test():
 
     inputs = [text]
 
-    inputs = tokenizer(inputs, max_length=512, truncation=True, padding=True, return_tensors="pt")
+    inputs = tokenizer(inputs, truncation=True, padding=True, return_tensors="pt")
     output = model.generate(**inputs, do_sample=True)
 
     decoded_output = tokenizer.batch_decode(output, skip_special_tokens=True)[0]
