@@ -50,6 +50,9 @@ def topic_to_int(row):
     row['Topic'] = tokenized["input_ids"]
     return row
 
+def load_from_csv(dataset_path):
+    return load_dataset('csv', data_files=dataset_path)
+
 
 def process_dataset(dataset_path, functions_to_map=None, to_rename={}, to_drop=[]):
     raw = load_from_csv(dataset_path)
