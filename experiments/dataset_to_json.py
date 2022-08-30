@@ -33,11 +33,11 @@ def main():
                               functions_to_map=[gender_to_word],
                               to_drop=['Age', 'Id', 'Topic'],
                               to_rename={'Gender': 'labels', 'Sentence': 'sentence'})
-    list_of_sentences = []
-    for row in dataset['train']:
-        list_of_sentences.append({"translation": {"s": row['sentence'], "t": row['labels']}})
-    with open("dataset.json", "w") as output:
-        output.write(json.dumps(list_of_sentences))
+
+    with open("dataset.json", "a") as output:
+        for row in dataset['train']:
+            output.write(json.dumps({"translation": {"s": row['sentence'], "t": row['labels']}}))
+            output.write("\n")
 
 
 if __name__ == "__main__":
