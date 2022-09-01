@@ -67,4 +67,16 @@ Bert Age test set results:
     weighted avg       0.34      0.34      0.33      5055
 
 
+### 01.09.2022
+
+IT5 Gender test set results:
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|           -1 |      0.00 |   0.00 |     0.00 |       0 |
+|            0 |      0.79 |   0.99 |     0.88 |    3978 |
+|            1 |      0.63 |   0.03 |     0.05 |    1076 |
+|     accuracy |      0.79 |   5054 |          |         |
+|    macro avg |      0.47 |   0.34 |     0.31 |    5054 |
+| weighted avg |      0.76 |   0.79 |     0.70 |    5054 |
 
