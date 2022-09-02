@@ -112,3 +112,23 @@ IT5 Age test set results (with text labels):
 |    macro avg |      0.18 |   0.17 |     0.17 |    5054 |
 | weighted avg |      0.23 |   0.22 |     0.23 |    5054 |
 
+IT5 Topic test set results:
+
+|                 | precision | recall | f1-score | support |
+|----------------:|----------:|-------:|---------:|--------:|
+|              -1 |      0.00 |   0.00 |     0.00 |       0 |
+|           anime |      0.42 |   0.51 |     0.46 |    1077 |
+|   automobilismo |      0.41 |   0.44 |     0.42 |     985 |
+|            bici |      1.00 |   0.01 |     0.01 |     155 |
+|           sport |      0.41 |   0.59 |     0.48 |    1292 |
+|          natura |      0.00 |   0.00 |     0.00 |     122 |
+|         metalli |      0.62 |   0.01 |     0.03 |     348 |
+|        medicina |      1.00 |   0.01 |     0.03 |     137 |
+|       celebrità |      0.14 |   0.02 |     0.04 |     361 |
+|            fumo |      0.65 |   0.25 |     0.36 |     377 |
+| intrattenimento |      0.05 |   0.01 |     0.01 |     115 |
+|      tecnologia |      0.00 |   0.00 |     0.00 |      85 |
+|        accuracy |           |        |     0.37 |    5054 |
+|       macro avg |      0.39 |   0.15 |     0.15 |    5054 |
+|    weighted avg |      0.43 |   0.37 |     0.34 |    5054 |
+
