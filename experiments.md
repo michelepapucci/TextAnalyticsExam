@@ -201,9 +201,25 @@ IT5 Topic Shuffled test set results:
 | macro avg       | 0.06      | 0.08   | 0.07     | 5054    |
 | weighted avg    | 0.15      | 0.20   | 0.17     | 5054    |
 
+IT5 Topic test set results (splittando l'input):
 
-
-
+|                 | precision | recall | f1-score | support |
+|-----------------|-----------|--------|----------|---------|
+| -1              | 0.00      | 0.00   | 0.00     | 0       |
+| anime           | 0.43      | 0.76   | 0.55     | 1077    |
+| automobilismo   | 0.38      | 0.77   | 0.51     | 985     |
+| bici            | 0.00      | 0.00   | 0.00     | 155     |
+| sport           | 0.70      | 0.50   | 0.58     | 1292    |
+| natura          | 0.00      | 0.00   | 0.00     | 122     |
+| metalli         | 0.60      | 0.01   | 0.02     | 348     |
+| medicina        | 1.00      | 0.01   | 0.03     | 137     |
+| celebrità       | 0.00      | 0.00   | 0.00     | 361     |
+| fumo            | 0.90      | 0.40   | 0.55     | 377     |
+| intrattenimento | 0.00      | 0.00   | 0.00     | 115     |
+| tecnologia      | 0.00      | 0.00   | 0.00     | 85      |
+| accuracy        |           |        | 0.47     | 5054    |
+| macro avg       | 0.33      | 0.20   | 0.19     | 5054    |
+| weighted avg    | 0.48      | 0.47   | 0.41     | 5054    |
 
 
 
