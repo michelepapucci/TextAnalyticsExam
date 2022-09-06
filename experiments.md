@@ -243,4 +243,49 @@ IT5 Multi task Topic test set results (splittando l'input):
 | macro avg       | 0.38      | 0.31   | 0.31     | 5054    |
 | weighted avg    | 0.54      | 0.56   | 0.52     | 5054    |
 
+BERT Multitask Topic:
 
+                         precision    recall  f1-score   support
+    
+                  ANIME       0.65      0.81      0.72      1078
+              AUTO-MOTO       0.62      0.74      0.68       985
+                  BIKES       0.00      0.00      0.00       155
+            CELEBRITIES       0.68      0.61      0.64       361
+          ENTERTAINMENT       0.70      0.33      0.45       115
+    MEDICINE-AESTHETICS       0.70      0.54      0.61       137
+        METAL-DETECTING       0.56      0.51      0.53       348
+                 NATURE       0.61      0.47      0.53       122
+                  SMOKE       0.71      0.69      0.70       377
+                 SPORTS       0.73      0.73      0.73      1292
+             TECHNOLOGY       0.00      0.00      0.00        85
+    
+               accuracy                           0.67      5055
+              macro avg       0.54      0.49      0.51      5055
+           weighted avg       0.64      0.67      0.65      5055
+
+
+BERT Multitask Age
+
+                  precision    recall  f1-score   support
+    
+            0-19       0.40      0.22      0.29       465
+           20-29       0.38      0.59      0.46      1534
+           30-39       0.26      0.16      0.19      1157
+           40-49       0.22      0.22      0.22       905
+          50-100       0.35      0.28      0.31       994
+    
+        accuracy                           0.33      5055
+       macro avg       0.32      0.29      0.29      5055
+    weighted avg       0.32      0.33      0.31      5055
+
+
+BERT Multitask Gender
+    
+                  precision    recall  f1-score   support
+    
+               M       0.87      0.94      0.91      3978
+               F       0.70      0.50      0.58      1077
+    
+        accuracy                           0.85      5055
+       macro avg       0.79      0.72      0.74      5055
+    weighted avg       0.84      0.85      0.84      5055
