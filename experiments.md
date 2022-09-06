@@ -201,6 +201,8 @@ IT5 Topic Shuffled test set results (splittando l'input):
 | macro avg       | 0.06      | 0.08   | 0.07     | 5054    |
 | weighted avg    | 0.15      | 0.20   | 0.17     | 5054    |
 
+### 06.09.2022
+
 IT5 Topic test set results (splittando l'input):
 
 |                 | precision | recall | f1-score | support |
@@ -221,8 +223,24 @@ IT5 Topic test set results (splittando l'input):
 | macro avg       | 0.33      | 0.20   | 0.19     | 5054    |
 | weighted avg    | 0.48      | 0.47   | 0.41     | 5054    |
 
+IT5 Multi task Topic test set results (splittando l'input):
 
-
-
+|                 | precision | recall | f1-score | support |
+|-----------------|-----------|--------|----------|---------|
+| -1              | 0.00      | 0.00   | 0.00     | 0       |
+| anime           | 0.51      | 0.81   | 0.62     | 1077    |
+| automobilismo   | 0.56      | 0.70   | 0.62     | 985     |
+| bici            | 0.00      | 0.00   | 0.00     | 155     |
+| sport           | 0.66      | 0.67   | 0.66     | 1292    |
+| natura          | 0.41      | 0.14   | 0.21     | 122     |
+| metalli         | 0.35      | 0.34   | 0.35     | 348     |
+| medicina        | 0.70      | 0.52   | 0.59     | 137     |
+| celebrità       | 0.67      | 0.01   | 0.01     | 361     |
+| fumo            | 0.75      | 0.51   | 0.61     | 377     |
+| intrattenimento | 0.00      | 0.00   | 0.00     | 115     |
+| tecnologia      | 0.00      | 0.00   | 0.00     | 85      |
+| accuracy        |           |        | 0.56     | 5054    |
+| macro avg       | 0.38      | 0.31   | 0.31     | 5054    |
+| weighted avg    | 0.54      | 0.56   | 0.52     | 5054    |
 
 
