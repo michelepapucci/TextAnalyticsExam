@@ -181,7 +181,7 @@ IT5 Age multi-task test set results:
 
 ### 05.09.2022
 
-IT5 Topic Shuffled test set results:
+IT5 Topic Shuffled test set results (splittando l'input):
 
 |                 | precision | recall | f1-score | support |
 |-----------------|-----------|--------|----------|---------|
@@ -189,14 +189,14 @@ IT5 Topic Shuffled test set results:
 | anime           | 0.00      | 0.00   | 0.00     | 115     |
 | automobilismo   | 0.00      | 0.00   | 0.00     | 85      |
 | bici            | 0.00      | 0.00   | 0.00     | 361     |
-| sport           | 0.21      | 0.25   | 0.23     | 1077    |
-| natura          | 0.04      | 0.01   | 0.01     | 377     |
+| sport           | 0.21      | 0.24   | 0.24     | 1077    |
+| natura          | 0.13      | 0.03   | 0.04     | 377     |
 | metalli         | 0.00      | 0.00   | 0.00     | 122     |
 | medicina        | 0.00      | 0.00   | 0.00     | 155     |
-| celebrità       | 0.19      | 0.31   | 0.24     | 985     |
+| celebrità       | 0.18      | 0.28   | 0.22     | 985     |
 | fumo            | 0.00      | 0.00   | 0.00     | 137     |
-| intrattenimento | 0.07      | 0.05   | 0.05     | 348     |
-| tecnologia      | 0.25      | 0.33   | 0.29     | 1292    |
+| intrattenimento | 0.05      | 0.04   | 0.05     | 348     |
+| tecnologia      | 0.26      | 0.35   | 0.30     | 1292    |
 | accuracy        |           |        | 0.20     | 5054    |
 | macro avg       | 0.06      | 0.08   | 0.07     | 5054    |
 | weighted avg    | 0.15      | 0.20   | 0.17     | 5054    |
