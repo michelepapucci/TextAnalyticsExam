@@ -68,7 +68,6 @@ Bert Age test set results:
 
 
 ### 01.09.2022
-
 IT5 Gender test set results:
 
 |              | precision | recall | f1-score | support |
@@ -302,4 +301,3 @@ IT5 Gender shuffled test set results:
 | accuracy     |           |        | 0.78     | 5054    |
 | macro avg    | 0.30      | 0.33   | 0.29     | 5054    |
 | weighted avg | 0.64      | 0.78   | 0.69     | 5054    |
-
