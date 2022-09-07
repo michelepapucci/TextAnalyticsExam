@@ -68,7 +68,6 @@ Bert Age test set results:
 
 
 ### 01.09.2022
-
 IT5 Gender test set results:
 
 |              | precision | recall | f1-score | support |
@@ -289,3 +288,16 @@ BERT Multitask Gender
         accuracy                           0.85      5055
        macro avg       0.79      0.72      0.74      5055
     weighted avg       0.84      0.85      0.84      5055
+
+### 07.09.2022
+
+IT5 Gender shuffled test set results:
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+| -1           | 0.00      | 0.00   | 0.00     | 0       |
+| uomo         | 0.10      | 0.00   | 0.01     | 1076    |
+| donna        | 0.79      | 0.99   | 0.88     | 3978    |
+| accuracy     |           |        | 0.78     | 5054    |
+| macro avg    | 0.30      | 0.33   | 0.29     | 5054    |
+| weighted avg | 0.64      | 0.78   | 0.69     | 5054    |
