@@ -389,3 +389,17 @@ Dummy classifier Gender test set results (most frequent):
 |     accuracy |           |        |     0.79 |    5055 |
 |    macro avg |      0.39 |   0.50 |     0.44 |    5055 |
 | weighted avg |      0.62 |   0.79 |     0.69 |    5055 |
+
+### 14.09
+Gender with m and f labels test set results:
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+| -1           | 0.00      | 0.00   | 0.00     | 0       |
+| 0            | 0.79      | 0.97   | 0.87     | 3978    |
+| 1            | 0.35      | 0.05   | 0.08     | 1076    |
+| accuracy     |           |        | 0.78     | 5054    |
+| macro avg    | 0.38      | 0.34   | 0.32     | 5054    |
+| weighted avg | 0.70      | 0.78   | 0.70     | 5054    |
+
+
