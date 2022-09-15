@@ -301,3 +301,105 @@ IT5 Gender shuffled test set results:
 | accuracy     |           |        | 0.78     | 5054    |
 | macro avg    | 0.30      | 0.33   | 0.29     | 5054    |
 | weighted avg | 0.64      | 0.78   | 0.69     | 5054    |
+
+### 13.09.2022
+
+Dummy classifier Topic test set results (stratified):
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|               ANIME |      0.21 |   0.22 |     0.21 |    1078 |
+|           AUTO-MOTO |      0.19 |   0.20 |     0.19 |     985 |
+|               BIKES |      0.02 |   0.02 |     0.02 |     155 |
+|              SPORTS |      0.27 |   0.28 |     0.27 |    1292 |
+|              NATURE |      0.03 |   0.03 |     0.03 |     122 |
+|     METAL-DETECTING |      0.08 |   0.08 |     0.08 |     348 |
+| MEDICINE-AESTHETICS |      0.02 |   0.01 |     0.02 |     137 |
+|         CELEBRITIES |      0.07 |   0.06 |     0.06 |     361 |
+|               SMOKE |      0.09 |   0.10 |     0.09 |     377 |
+|       ENTERTAINMENT |      0.01 |   0.01 |     0.01 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.17 |    5055 |
+|           macro avg |      0.09 |   0.09 |     0.09 |    5055 |
+|        weighted avg |      0.17 |   0.17 |     0.17 |    5055 |
+
+
+Dummy classifier Age test set results (stratified):
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|         0-19 |      0.09 |   0.12 |     0.10 |     465 |
+|        20-29 |      0.32 |   0.31 |     0.31 |    1534 |
+|        30-39 |      0.23 |   0.20 |     0.22 |    1157 |
+|        40-49 |      0.15 |   0.17 |     0.16 |     905 |
+|       50-100 |      0.20 |   0.19 |     0.20 |     994 |
+|     accuracy |           |        |     0.22 |    5055 |
+|    macro avg |      0.20 |   0.20 |     0.20 |    5055 |
+| weighted avg |      0.22 |   0.22 |     0.22 |    5055 |
+
+
+Dummy classifier Gender test set results (stratified):
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|            M |      0.79 |   0.83 |     0.81 |    3978 |
+|            F |      0.22 |   0.18 |     0.19 |    1077 |
+|     accuracy |           |        |     0.69 |    5055 |
+|    macro avg |      0.50 |   0.50 |     0.50 |    5055 |
+| weighted avg |      0.67 |   0.69 |     0.68 |    5055 |
+
+Dummy classifier Topic test set results (most frequent):
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|               ANIME |      0.00 |   0.00 |     0.00 |    1078 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|              SPORTS |      0.26 |   1.00 |     0.41 |    1292 |
+|              NATURE |      0.00 |   0.00 |     0.00 |     122 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     348 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     137 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.26 |    5055 |
+|           macro avg |      0.02 |   0.09 |     0.04 |    5055 |
+|        weighted avg |      0.07 |   0.26 |     0.10 |    5055 |
+
+Dummy classifier Age test set results (most frequent):
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|         0-19 |      0.00 |   0.00 |     0.00 |     465 |
+|        20-29 |      0.30 |   1.00 |     0.47 |    1534 |
+|        30-39 |      0.00 |   0.00 |     0.00 |    1157 |
+|        40-49 |      0.00 |   0.00 |     0.00 |     905 |
+|       50-100 |      0.00 |   0.00 |     0.00 |     994 |
+|     accuracy |           |        |     0.30 |    5055 |
+|    macro avg |      0.06 |   0.20 |     0.09 |    5055 |
+| weighted avg |      0.09 |   0.30 |     0.14 |    5055 |
+
+Dummy classifier Gender test set results (most frequent):
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|            M |      0.79 |   1.00 |     0.88 |    3978 |
+|            F |      0.00 |   0.00 |     0.00 |    1077 |
+|     accuracy |           |        |     0.79 |    5055 |
+|    macro avg |      0.39 |   0.50 |     0.44 |    5055 |
+| weighted avg |      0.62 |   0.79 |     0.69 |    5055 |
+
+### 14.09
+Gender with m and f labels test set results:
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+| -1           | 0.00      | 0.00   | 0.00     | 0       |
+| 0            | 0.79      | 0.97   | 0.87     | 3978    |
+| 1            | 0.35      | 0.05   | 0.08     | 1076    |
+| accuracy     |           |        | 0.78     | 5054    |
+| macro avg    | 0.38      | 0.34   | 0.32     | 5054    |
+| weighted avg | 0.70      | 0.78   | 0.70     | 5054    |
+
+
