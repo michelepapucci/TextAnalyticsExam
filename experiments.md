@@ -417,3 +417,50 @@ T5 Shuffled Age test set results:
 |     accuracy |           |        |     0.19 |    5054 |
 |    macro avg |      0.10 |   0.16 |     0.10 |    5054 |
 | weighted avg |      0.13 |   0.19 |     0.12 |    5054 |
+
+IT5 Topic multi-task test set results (randomizing input):
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.65 |   0.41 |     0.50 |    1077 |
+|           AUTO-MOTO |      0.56 |   0.52 |     0.54 |     985 |
+|               BIKES |      0.25 |   0.01 |     0.02 |     155 |
+|              SPORTS |      0.54 |   0.58 |     0.56 |    1292 |
+|              NATURE |      0.14 |   0.13 |     0.13 |     122 |
+|     METAL-DETECTING |      0.29 |   0.14 |     0.19 |     348 |
+| MEDICINE-AESTHETICS |      0.52 |   0.30 |     0.38 |     137 |
+|         CELEBRITIES |      0.11 |   0.07 |     0.08 |     361 |
+|               SMOKE |      0.49 |   0.42 |     0.46 |     377 |
+|       ENTRATEINMENT |      0.07 |   0.03 |     0.04 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.39 |    5054 |
+|           macro avg |      0.30 |   0.22 |     0.24 |    5054 |
+|        weighted avg |      0.48 |   0.39 |     0.42 |    5054 |
+
+IT5 Age multi-task test set results (randomizing input):
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|           -1 |      0.00 |   0.00 |     0.00 |       0 |
+|         0-19 |      0.07 |   0.03 |     0.04 |     465 |
+|        20-29 |      0.31 |   0.59 |     0.41 |    1534 |
+|        30-39 |      0.24 |   0.15 |     0.18 |    1157 |
+|        40-49 |      0.22 |   0.16 |     0.18 |     905 |
+|       50-100 |      0.20 |   0.11 |     0.14 |     993 |
+|     accuracy |           |        |     0.26 |    5054 |
+|    macro avg |      0.17 |   0.17 |     0.16 |    5054 |
+| weighted avg |      0.23 |   0.26 |     0.23 |    5054 |
+
+
+IT5 Gender multi-task test set results (randomizing input):
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|           -1 |      0.00 |   0.00 |     0.00 |       0 |
+|            M |      0.80 |   0.96 |     0.87 |    3978 |
+|            F |      0.40 |   0.07 |     0.11 |    1076 |
+|     accuracy |           |        |     0.77 |    5054 |
+|    macro avg |      0.40 |   0.34 |     0.33 |    5054 |
+| weighted avg |      0.71 |   0.77 |     0.71 |    5054 |
+
