@@ -403,3 +403,42 @@ Gender with m and f labels test set results:
 | weighted avg | 0.70      | 0.78   | 0.70     | 5054    |
 
 
+### 22.09.22
+Bert multitask Gender
+
+                  precision    recall  f1-score   support
+            Male       0.89      0.92      0.90      3978
+          Female       0.66      0.56      0.60      1077
+        accuracy                           0.84      5055
+       macro avg       0.77      0.74      0.75      5055
+    weighted avg       0.84      0.84      0.84      5055
+
+Bert multitask Age
+
+                  precision    recall  f1-score   support
+            0-19       0.31      0.34      0.32       465
+           20-29       0.40      0.49      0.44      1534
+           30-39       0.28      0.25      0.26      1157
+           40-49       0.26      0.27      0.26       905
+          50-100       0.38      0.27      0.32       994
+        accuracy                           0.34      5055
+       macro avg       0.33      0.32      0.32      5055
+    weighted avg       0.34      0.34      0.33      5055
+
+Bert multitask Topic
+
+                        precision    recall  f1-score   support
+                  ANIME       0.71      0.81      0.76      1078
+              AUTO-MOTO       0.67      0.72      0.69       985
+                  BIKES       0.30      0.17      0.22       155
+            CELEBRITIES       0.72      0.59      0.65       361
+          ENTERTAINMENT       0.47      0.44      0.46       115
+    MEDICINE-AESTHETICS       0.65      0.57      0.61       137
+        METAL-DETECTING       0.56      0.53      0.54       348
+                 NATURE       0.52      0.48      0.50       122
+                  SMOKE       0.69      0.68      0.69       377
+                 SPORTS       0.72      0.74      0.73      1292
+             TECHNOLOGY       0.72      0.21      0.33        85
+               accuracy                           0.68      5055
+              macro avg       0.61      0.54      0.56      5055
+           weighted avg       0.67      0.68      0.67      5055

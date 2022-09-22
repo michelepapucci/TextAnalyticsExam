@@ -19,7 +19,7 @@ class Metrics:
         df = pd.read_csv(self.predictions_path, sep="\t")
         self.y_true = df['y_true'].values
         self.y_pred = df['y_pred'].values
-        self.y_proba = df['y_proba'].values
+        # self.y_proba = df['y_proba'].values
 
     def plot_multiclass_roc(self, output_path="/output/", title='ROC', figsize=(17, 6)):
         # structures
@@ -58,7 +58,7 @@ class Metrics:
         if output_path is not None:
             with open(f"{output_path}classification_report.txt", "w") as output:
                 output.write(report)
-        self.plot_multiclass_roc(output_path)
+        # self.plot_multiclass_roc(output_path)
 
 
 if __name__ == '__main__':
