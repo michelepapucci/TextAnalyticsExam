@@ -625,4 +625,24 @@ T5 2 shot learning Gender test set results:
 | weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
 
 T5 3 shot learning Gender test set results:
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|           -1 |      0.00 |   0.00 |     0.00 |       0 |
+|         uomo |      0.00 |   0.00 |     0.00 |    3978 |
+|        donna |      0.00 |   0.00 |     0.00 |    1076 |
+|     accuracy |           |        |     0.00 |    5054 |
+|    macro avg |      0.00 |   0.00 |     0.00 |    5054 |
+| weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
+
 T5 4 shot learning Gender test set results:
+
+              precision    recall  f1-score   support
+
+          -1       0.00      0.00      0.00         0
+        uomo       0.82      0.00      0.00      3978
+       donna       0.50      0.00      0.01      1076
+
+    accuracy                           0.00      5054
+   macro avg       0.44      0.00      0.00      5054
+weighted avg       0.75      0.00      0.00      5054
