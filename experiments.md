@@ -467,6 +467,7 @@ IT5 Gender multi-task test set results (randomizing input):
 ### 22.09
 
 T5 1 shot learning Age test set results:
+
 |              | precision | recall | f1-score | support |
 |-------------:|----------:|-------:|---------:|--------:|
 |           -1 |      0.00 |   0.00 |     0.00 |       0 |
@@ -521,7 +522,82 @@ T5 4 shot learning Age test set results:
 |    macro avg |      0.18 |   0.14 |     0.14 |    5054 |
 | weighted avg |      0.23 |   0.22 |     0.20 |    5054 |
 
+T5 1 shot learning Topic test set results:
 
+|                     | precision | recall | f1.score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.00 |   0.00 |     0.00 |    1077 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.00 |   0.00 |     0.00 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|              SPORTS |      0.00 |   0.00 |     0.00 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.00 |    5054 |
+|           macro avg |      0.00 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
 
+T5 2 shot learning Topic test set results:
 
+|                     | precision | recall | f1.score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.00 |   0.00 |     0.00 |    1077 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.00 |   0.00 |     0.00 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|              SPORTS |      0.00 |   0.00 |     0.00 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.00 |    5054 |
+|           macro avg |      0.00 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
 
+T5 3 shot learning Topic test set results:
+
+|                     | precision | recall | f1.score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.00 |   0.00 |     0.00 |    1077 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.07 |   0.00 |     0.01 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|              SPORTS |      0.00 |   0.00 |     0.00 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.00 |    5054 |
+|           macro avg |      0.00 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
+
+T5 4 shot learning Topic test set results:
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.64 |   0.14 |     0.23 |    1077 |
+|           AUTO-MOTO |      0.82 |   0.02 |     0.05 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.39 |   0.41 |     0.40 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.10 |   0.11 |     0.10 |     361 |
+|               SMOKE |      0.88 |   0.04 |     0.07 |     377 |
+|              SPORTS |      0.09 |   0.08 |     0.08 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.15 |    5054 |
+|           macro avg |      0.24 |   0.07 |     0.08 |    5054 |
+|        weighted avg |      0.47 |   0.15 |     0.18 |    5054 |
