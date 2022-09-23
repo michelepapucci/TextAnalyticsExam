@@ -404,7 +404,7 @@ Gender with m and f labels test set results:
 
 
 ### 22.09.22
-Bert multitask Gender
+Bert multitask Gender x3 
 
                   precision    recall  f1-score   support
             Male       0.89      0.92      0.90      3978
@@ -413,7 +413,7 @@ Bert multitask Gender
        macro avg       0.77      0.74      0.75      5055
     weighted avg       0.84      0.84      0.84      5055
 
-Bert multitask Age
+Bert multitask Age x3 
 
                   precision    recall  f1-score   support
             0-19       0.31      0.34      0.32       465
@@ -425,7 +425,7 @@ Bert multitask Age
        macro avg       0.33      0.32      0.32      5055
     weighted avg       0.34      0.34      0.33      5055
 
-Bert multitask Topic
+Bert multitask Topic x3
 
                         precision    recall  f1-score   support
                   ANIME       0.71      0.81      0.76      1078
