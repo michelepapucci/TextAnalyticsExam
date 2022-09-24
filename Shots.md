@@ -100,3 +100,23 @@ T5 Gender 4 shot learning test predictions:
 |     accuracy |           |        |     0.23 |    5054 |
 |    macro avg |      0.36 |   0.34 |     0.13 |    5054 |
 | weighted avg |      0.73 |   0.23 |     0.11 |    5054 |
+
+T5 Topic 1 shot learning test predictions:
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.00 |   0.00 |     0.00 |    1077 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.33 |   0.00 |     0.01 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|              SPORTS |      1.00 |   0.01 |     0.02 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.00 |    5054 |
+|           macro avg |      0.11 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.05 |   0.00 |     0.00 |    5054 |
