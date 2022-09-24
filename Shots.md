@@ -113,10 +113,10 @@ T5 Topic 1 shot learning test predictions:
 |       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
 | MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
 |     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
-|              NATURE |      0.33 |   0.00 |     0.01 |     361 |
+|              NATURE |      0.00 |   0.00 |     0.00 |     361 |
 |               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
-|              SPORTS |      1.00 |   0.01 |     0.02 |     115 |
+|              SPORTS |      0.00 |   0.00 |     0.00 |     115 |
 |          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
 |            accuracy |           |        |     0.00 |    5054 |
-|           macro avg |      0.11 |   0.00 |     0.00 |    5054 |
-|        weighted avg |      0.05 |   0.00 |     0.00 |    5054 |
+|           macro avg |      0.00 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
