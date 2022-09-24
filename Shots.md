@@ -88,3 +88,14 @@ T5 Gender 3 shot learning test predictions:
 | accuracy     |           |        | 0.24     | 5054    |
 | macro avg    | 0.55      | 0.51   | 0.22     | 5054    |
 | weighted avg | 0.73      | 0.24   | 0.15     | 5054    |
+
+T5 Gender 4 shot learning test predictions:
+
+|              | precision | recall | f1-score | support |
+|-------------:|----------:|-------:|---------:|--------:|
+|           -1 |      0.00 |   0.00 |     0.00 |       0 |
+|         uomo |      0.87 |   0.03 |     0.05 |    3978 |
+|        donna |      0.21 |   0.98 |     0.35 |    1076 |
+|     accuracy |           |        |     0.23 |    5054 |
+|    macro avg |      0.36 |   0.34 |     0.13 |    5054 |
+| weighted avg |      0.73 |   0.23 |     0.11 |    5054 |
