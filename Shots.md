@@ -1,4 +1,4 @@
-T5 few shots learning
+#T5 few shots learning
 
 ### 23/09
 
@@ -121,3 +121,62 @@ T5 Topic 1 shot learning test predictions:
 |           macro avg |      0.00 |   0.00 |     0.00 |    5054 |
 |        weighted avg |      0.00 |   0.00 |     0.00 |    5054 |
 
+T5 Topic 2 shot learning test predictions:
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.00 |   0.00 |     0.00 |    1077 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.50 |   0.01 |     0.01 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|              SPORTS |      0.00 |   0.00 |     0.00 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.00 |    5054 |
+|           macro avg |      0.04 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.04 |   0.00 |     0.00 |    5054 |
+
+T5 Topic 3 shot learning test predictions:
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.00 |   0.00 |     0.00 |    1077 |
+|           AUTO-MOTO |      0.00 |   0.00 |     0.00 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.00 |   0.00 |     0.00 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.00 |   0.00 |     0.00 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.04 |   0.01 |     0.02 |     361 |
+|               SMOKE |      0.00 |   0.00 |     0.00 |     377 |
+|              SPORTS |      0.00 |   0.00 |     0.00 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.00 |    5054 |
+|           macro avg |      0.04 |   0.00 |     0.00 |    5054 |
+|        weighted avg |      0.04 |   0.00 |     0.00 |    5054 |
+
+T5 Topic 4 shot learning test predictions:
+
+|                     | precision | recall | f1-score | support |
+|--------------------:|----------:|-------:|---------:|--------:|
+|                  -1 |      0.00 |   0.00 |     0.00 |       0 |
+|               ANIME |      0.43 |   0.55 |     0.48 |    1077 |
+|           AUTO-MOTO |      0.45 |   0.50 |     0.47 |     985 |
+|               BIKES |      0.00 |   0.00 |     0.00 |     155 |
+|         CELEBRITIES |      0.44 |   0.60 |     0.51 |    1292 |
+|       ENTERTAINMENT |      0.00 |   0.00 |     0.00 |     122 |
+| MEDICINE-AESTHETICS |      0.28 |   0.06 |     0.10 |     348 |
+|     METAL-DETECTING |      0.00 |   0.00 |     0.00 |     137 |
+|              NATURE |      0.08 |   0.02 |     0.03 |     361 |
+|               SMOKE |      0.44 |   0.34 |     0.39 |     377 |
+|              SPORTS |      0.08 |   0.01 |     0.02 |     115 |
+|          TECHNOLOGY |      0.00 |   0.00 |     0.00 |      85 |
+|            accuracy |           |        |     0.40 |    5054 |
+|           macro avg |      0.18 |   0.17 |     0.17 |    5054 |
+|        weighted avg |      0.35 |   0.40 |     0.36 |    5054 |
