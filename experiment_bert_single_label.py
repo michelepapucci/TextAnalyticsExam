@@ -1,14 +1,11 @@
-import sys
-
-sys.path.insert(0, '../')
-
 from libraries.Experiment.experiment import NLMExperiment
 from libraries.Experiment.metrics import Metrics
 from libraries.Experiment.utils import gender_to_int, topic_to_int, age_range_to_int
 
 
 def gender():
-    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/post_processed/training_filtered.csv",
+
+    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/bert_shots/training_1_shot.csv",
                                'accuracy')
     experiment.process_dataset(functions_to_map=[gender_to_int], to_drop=['Age', 'Id', 'Topic'],
                                to_rename={'Gender': 'label', 'Sentence': 'sentence'})
@@ -16,7 +13,7 @@ def gender():
     experiment.evaluate()
     print(experiment.evaluation_results)
 
-    experiment.save_model("models/bert_gender_single_label/")
+    experiment.save_model("models/bert_gender_single_label_1_shot/")
 
 
 def topic():
@@ -45,9 +42,9 @@ def age():
 
 
 def main():
-    # gender()
+    gender()
     # topic()
-    age()
+    # age()
 
 
 if __name__ == '__main__':
