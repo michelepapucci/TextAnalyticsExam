@@ -4,7 +4,6 @@ from libraries.Experiment.utils import gender_to_int, topic_to_int, age_range_to
 
 
 def gender():
-
     experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/bert_shots/training_1_shot.csv",
                                'accuracy')
     experiment.process_dataset(functions_to_map=[gender_to_int], to_drop=['Age', 'Id', 'Topic'],
@@ -13,7 +12,21 @@ def gender():
     experiment.evaluate()
     print(experiment.evaluation_results)
 
-    experiment.save_model("models/bert_gender_single_label_1_shot/")
+    model_folder = "models/bert_gender_single_label_1_shot/"
+
+    experiment.save_model(model_folder)
+
+    experiment.load_model(model_folder)
+
+    experiment.set_test_dataset("src/data/post_processed/test_1_filtered.csv", functions_to_map=[gender_to_int],
+                                to_drop=['Age', 'Id', 'Topic'],
+                                to_rename={'Gender': 'label', 'Sentence': 'sentence'})
+
+    experiment.test(experiment.test_dataset['test'], f"output/{model_folder}/output.tsv")
+
+    m = Metrics("../output/topic/bert_for_topic_predictions.tsv",
+                ['Uomo', 'Donna'])
+    m.report(f"output/{model_folder}/classification_report.txt")
 
 
 def topic():
