@@ -42,3 +42,41 @@
 
 
 
+### Bert Topic 1 shot
+                  ANIME       0.62      0.25      0.36      3978
+              AUTO-MOTO       0.09      0.10      0.09      1077
+                  BIKES       0.00      0.00      0.00         0
+            CELEBRITIES       0.00      0.00      0.00         0
+          ENTERTAINMENT       0.00      0.00      0.00         0
+    MEDICINE-AESTHETICS       0.00      0.00      0.00         0
+        METAL-DETECTING       0.00      0.00      0.00         0
+                 NATURE       0.00      0.00      0.00         0
+                  SMOKE       0.00      0.00      0.00         0
+                 SPORTS       0.00      0.00      0.00         0
+             TECHNOLOGY       0.00      0.00      0.00         0
+    
+              micro avg       0.22      0.22      0.22      5055
+              macro avg       0.06      0.03      0.04      5055
+           weighted avg       0.51      0.22      0.30      5055
+
+### Bert topic 2 shot
+
+                         precision    recall  f1-score   support
+    
+                  ANIME       0.62      0.22      0.33      3978
+              AUTO-MOTO       0.07      0.08      0.07      1077
+                  BIKES       0.00      0.00      0.00         0
+            CELEBRITIES       0.00      0.00      0.00         0
+          ENTERTAINMENT       0.00      0.00      0.00         0
+    MEDICINE-AESTHETICS       0.00      0.00      0.00         0
+        METAL-DETECTING       0.00      0.00      0.00         0
+                 NATURE       0.00      0.00      0.00         0
+                  SMOKE       0.00      0.00      0.00         0
+                 SPORTS       0.00      0.00      0.00         0
+             TECHNOLOGY       0.00      0.00      0.00         0
+    
+              micro avg       0.19      0.19      0.19      5055
+              macro avg       0.06      0.03      0.04      5055
+           weighted avg       0.50      0.19      0.27      5055
+
+

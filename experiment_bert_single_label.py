@@ -44,9 +44,9 @@ def topic():
 
     experiment.load_model(model_folder)
 
-    experiment.set_test_dataset("src/data/post_processed/test_1_filtered.csv", functions_to_map=[gender_to_int],
-                                to_drop=['Age', 'Id', 'Topic'],
-                                to_rename={'Gender': 'label', 'Sentence': 'sentence'})
+    experiment.set_test_dataset("src/data/post_processed/test_1_filtered.csv", functions_to_map=[topic_to_int],
+                                to_drop=['Age', 'Id', 'Gender'],
+                                to_rename={'Topic': 'label', 'Sentence': 'sentence'})
 
     experiment.test(experiment.test_dataset['test'], f"output/{model_folder}output.tsv")
 
@@ -71,8 +71,8 @@ def age():
 
 
 def main():
-    gender()
-    # topic()
+    # gender()
+    topic()
     # age()
 
 
