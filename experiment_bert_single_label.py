@@ -24,7 +24,7 @@ def gender():
 
     experiment.test(experiment.test_dataset['test'], f"output/{model_folder}output.tsv")
 
-    m = Metrics("../output/topic/bert_for_topic_predictions.tsv",
+    m = Metrics(f"output/{model_folder}output.tsv",
                 ['Uomo', 'Donna'])
     m.report(f"output/{model_folder}classification_report.txt")
 
