@@ -22,11 +22,11 @@ def gender():
                                 to_drop=['Age', 'Id', 'Topic'],
                                 to_rename={'Gender': 'label', 'Sentence': 'sentence'})
 
-    experiment.test(experiment.test_dataset['test'], f"output/{model_folder}/output.tsv")
+    experiment.test(experiment.test_dataset['test'], f"output/{model_folder}output.tsv")
 
     m = Metrics("../output/topic/bert_for_topic_predictions.tsv",
                 ['Uomo', 'Donna'])
-    m.report(f"output/{model_folder}/classification_report.txt")
+    m.report(f"output/{model_folder}classification_report.txt")
 
 
 def topic():
