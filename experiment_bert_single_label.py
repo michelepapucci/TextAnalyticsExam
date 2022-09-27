@@ -67,13 +67,27 @@ def age():
     experiment.evaluate()
     print(experiment.evaluation_results)
 
-    experiment.save_model("models/bert_age_single_label/")
+    model_folder = "models/bert_age_single_label_1_shot/"
+
+    experiment.save_model(model_folder)
+
+    experiment.load_model(model_folder)
+
+    experiment.set_test_dataset("src/data/post_processed/test_1_filtered.csv", functions_to_map=[age_range_to_int],
+                                to_drop=['Topic', 'Id', 'Gender'],
+                                to_rename={'Age': 'label', 'Sentence': 'sentence'})
+
+    experiment.test(experiment.test_dataset['test'], f"output/{model_folder}output.tsv")
+
+    m = Metrics(f"output/{model_folder}output.tsv",
+                ["0-19", "20-29", "30-39", "40-49", "50-100"])
+    m.report(f"output/{model_folder}classification_report.txt")
 
 
 def main():
     # gender()
-    topic()
-    # age()
+    # topic()
+    age()
 
 
 if __name__ == '__main__':
