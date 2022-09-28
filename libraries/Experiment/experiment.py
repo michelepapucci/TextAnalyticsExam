@@ -1,12 +1,12 @@
 from transformers import AutoTokenizer, TrainingArguments, Trainer
 from datasets import load_dataset, DatasetDict, load_metric
 import numpy as np
-from transformers import AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoConfig
 
 
 class NLMExperiment:
 
-    def __init__(self, model_name, dataset_path, metrics, num_labels=2, load_weight=True, tokenizer_name=None):
+    def __init__(self, model_name, dataset_path, metrics, num_labels=2, load_weight=True):
         self.metric = load_metric(metrics)
         self.model_name = model_name
         self.dataset_path = dataset_path
@@ -25,8 +25,9 @@ class NLMExperiment:
             self.model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=self.num_labels)
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         else:
-            self.model = AutoModelForSequenceClassification.from_config(model_name, num_labels=self.num_labels)
-            self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+            config = AutoConfig.from_pretrained("bert-base-cased")
+            self.model = AutoModelForSequenceClassification.from_config(config, num_labels=self.num_labels)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     def load_from_csv(self, dataset_path):
         return load_dataset('csv', data_files=dataset_path)
