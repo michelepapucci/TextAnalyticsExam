@@ -4,15 +4,15 @@ from libraries.Experiment.utils import gender_to_int, topic_to_int, age_range_to
 
 
 def gender():
-    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/bert_shots/training_1_shot.csv",
-                               'accuracy')
+    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/post_processed/training_filtered.csv",
+                               'accuracy', load_weight=False)
     experiment.process_dataset(functions_to_map=[gender_to_int], to_drop=['Age', 'Id', 'Topic'],
                                to_rename={'Gender': 'label', 'Sentence': 'sentence'})
     experiment.fine_tune()
     experiment.evaluate()
     print(experiment.evaluation_results)
 
-    model_folder = "models/bert_gender_single_label_1_shot/"
+    model_folder = "models/bert_gender_config/"
 
     experiment.save_model(model_folder)
 
@@ -30,15 +30,15 @@ def gender():
 
 
 def topic():
-    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/bert_shots/training_1_shot.csv",
-                               'accuracy', num_labels=11)
+    experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/post_processed/training_filtered.csv",
+                               'accuracy', load_weight=False, num_labels=11)
     experiment.process_dataset(functions_to_map=[topic_to_int], to_drop=['Age', 'Id', 'Gender'],
                                to_rename={'Topic': 'label', 'Sentence': 'sentence'})
     experiment.fine_tune()
     experiment.evaluate()
     print(experiment.evaluation_results)
 
-    model_folder = "models/bert_topic_single_label_1_shot/"
+    model_folder = "models/bert_topic_config/"
 
     experiment.save_model(model_folder)
 
@@ -59,7 +59,7 @@ def topic():
 
 def age():
     experiment = NLMExperiment("dbmdz/bert-base-italian-cased", "src/data/post_processed/training_filtered.csv",
-                               'accuracy', num_labels=5)
+                               'accuracy', load_weight=False, num_labels=5)
     experiment.process_dataset(functions_to_map=[age_range_to_int], to_drop=['Topic', 'Id', 'Gender'],
                                to_rename={'Age': 'label', 'Sentence': 'sentence'})
     print(experiment.dataset)
@@ -67,7 +67,7 @@ def age():
     experiment.evaluate()
     print(experiment.evaluation_results)
 
-    model_folder = "models/bert_age_single_label_1_shot/"
+    model_folder = "models/bert_age_config/"
 
     experiment.save_model(model_folder)
 

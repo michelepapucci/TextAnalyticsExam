@@ -6,7 +6,7 @@ from transformers import AutoModelForSequenceClassification
 
 class NLMExperiment:
 
-    def __init__(self, model_name, dataset_path, metrics, num_labels=2):
+    def __init__(self, model_name, dataset_path, metrics, num_labels=2, load_weight = True):
         self.metric = load_metric(metrics)
         self.model_name = model_name
         self.dataset_path = dataset_path
@@ -22,7 +22,10 @@ class NLMExperiment:
         self.num_labels = num_labels
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=self.num_labels)
+        if load_weight:
+            self.model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=self.num_labels)
+        else:
+            self.model = AutoModelForSequenceClassification.from_config(model_name, num_labels=self.num_labels)
 
     def load_from_csv(self, dataset_path):
         return load_dataset('csv', data_files=dataset_path)
