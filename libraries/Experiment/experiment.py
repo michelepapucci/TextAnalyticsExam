@@ -6,7 +6,7 @@ from transformers import AutoModelForSequenceClassification
 
 class NLMExperiment:
 
-    def __init__(self, model_name, dataset_path, metrics, num_labels=2, load_weight = True):
+    def __init__(self, model_name, dataset_path, metrics, num_labels=2, load_weight=True, tokenizer_name=None):
         self.metric = load_metric(metrics)
         self.model_name = model_name
         self.dataset_path = dataset_path
@@ -21,11 +21,12 @@ class NLMExperiment:
 
         self.num_labels = num_labels
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         if load_weight:
             self.model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=self.num_labels)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         else:
             self.model = AutoModelForSequenceClassification.from_config(model_name, num_labels=self.num_labels)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     def load_from_csv(self, dataset_path):
         return load_dataset('csv', data_files=dataset_path)
@@ -45,7 +46,7 @@ class NLMExperiment:
     def process_dataset(self, functions_to_map=None, to_rename={}, to_drop=[]):
         raw = self.load_from_csv(self.dataset_path)
         test = raw['train'].train_test_split(0.2)
-        dataset = DatasetDict({'train': raw['train'], 'val': test['test']}) # TODO: Guardare bene
+        dataset = DatasetDict({'train': raw['train'], 'val': test['test']})  # TODO: Guardare bene
         if functions_to_map is not None:
             for function in functions_to_map:
                 dataset = dataset.map(function)

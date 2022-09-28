@@ -472,3 +472,8 @@ T5 Age split and randomizing training set:
 |     accuracy |           |        |     0.24 |    5054 |
 |    macro avg |      0.17 |   0.16 |     0.16 |    5054 |
 | weighted avg |      0.23 |   0.24 |     0.22 |    5054 |
+
+
+### Bert Age no pre-training:
+
+
