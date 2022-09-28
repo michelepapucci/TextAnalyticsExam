@@ -34,7 +34,7 @@ def load_from_csv(dataset_path):
 
 def process_dataset(dataset_path, functions_to_map=None, to_rename={}, to_drop=[]):
     raw = load_from_csv(dataset_path)
-    d = raw['train'].train_test_split(0.2)
+    d = raw['train'].train_test_split(0.1)
     dataset = DatasetDict({'train': d['train'], 'validation': d['test']})
     if functions_to_map is not None:
         for function in functions_to_map:
@@ -47,14 +47,14 @@ def process_dataset(dataset_path, functions_to_map=None, to_rename={}, to_drop=[
 
 
 def main():
-    dataset = process_dataset("training_filtered.csv",
+    dataset = process_dataset("training_filtered_1shot_random.csv",
                               functions_to_map=[topic_to_word],
                               to_drop=['Age', 'Id', 'Gender'],
                               to_rename={'Topic': 'labels', 'Sentence': 'sentence'})
     list_of_sentences = []
     for row in dataset['train']:
         list_of_sentences.append({"translation": {"s": row['sentence'], "t": row['labels']}})
-    with open("dataset_topic.json", "a") as output:
+    with open("dataset_topic_1shot_random.json", "a") as output:
         for row in dataset['train']:
             output.write(json.dumps({"translation": {"s": row['sentence'], "t": row['labels']}}))
             output.write("\n")
