@@ -26,7 +26,7 @@ class NLMExperiment:
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         else:
             self.model = AutoModelForSequenceClassification.from_config(model_name, num_labels=self.num_labels)
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+            self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
 
     def load_from_csv(self, dataset_path):
         return load_dataset('csv', data_files=dataset_path)
