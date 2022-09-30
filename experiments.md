@@ -473,7 +473,93 @@ T5 Age split and randomizing training set:
 |    macro avg |      0.17 |   0.16 |     0.16 |    5054 |
 | weighted avg |      0.23 |   0.24 |     0.22 |    5054 |
 
-
+## 30.09.2022
 ### Bert Age no pre-training:
+                precision    recall  f1-score   support
+
+    0-19        0.49      0.18      0.27       465
+    20-29       0.35      0.68      0.46      1534
+    30-39       0.19      0.03      0.05      1157
+    40-49       0.23      0.20      0.21       905
+    50-100       0.31      0.29      0.30       994
+
+    accuracy                           0.32      5055
+    macro avg       0.31      0.28      0.26      5055  
+    weighted avg       0.30      0.32      0.27      5055
 
 
+### Bert Topic no pre-training:
+
+                      precision    recall  f1-score   support
+
+               ANIME       0.60      0.61      0.61      1078
+           AUTO-MOTO       0.38      0.54      0.45       985
+               BIKES       0.00      0.00      0.00       155
+         CELEBRITIES       0.00      0.00      0.00       361
+       ENTERTAINMENT       0.00      0.00      0.00       115
+    MEDICINE-AESTHETICS       0.00      0.00      0.00       137
+     METAL-DETECTING       0.00      0.00      0.00       348
+             NATURE       0.00      0.00      0.00       122
+               SMOKE       0.00      0.00      0.00       377
+              SPORTS       0.36      0.72      0.48      1292
+         TECHNOLOGY       0.00      0.00      0.00        85
+
+         accuracy                           0.42      5055
+           macro avg       0.12      0.17      0.14      5055
+       weighted avg       0.30      0.42      0.34      5055
+
+### Bert Gender no Pre-training:
+               precision    recall  f1-score   support
+
+         Uomo       0.81      0.97      0.88      3978
+       Donna       0.58      0.15      0.24      1077
+
+    accuracy                           0.80      5055
+    macro avg       0.69      0.56      0.56      5055
+     weighted avg       0.76      0.80      0.74      5055
+
+### IT5 Topic no pre-training:
+                  precision    recall  f1-score   support
+
+          errore       0.00      0.00      0.00         0
+           anime       0.48      0.58      0.53      1077
+    automobilismo       0.35      0.57      0.43       985
+           bici       0.00      0.00      0.00       155
+       celebrità       0.21      0.02      0.04       361
+    intrattenimento       0.00      0.00      0.00       115
+       medicina       0.00      0.00      0.00       137
+         metalli       0.09      0.01      0.02       348
+          natura       0.00      0.00      0.00       122
+          fumo       0.34      0.15      0.20       377
+           sport       0.42      0.61      0.50      1292
+      tecnologia       0.00      0.00      0.00        85
+
+       micro avg       0.41      0.41      0.41      5054
+       macro avg       0.16      0.16      0.14      5054
+       weighted avg       0.32      0.41      0.34      5054
+
+### IT5 Gender no pre-training:
+                precision    recall  f1-score   support
+    
+          errore       0.00      0.00      0.00         0
+            uomo       0.80      0.98      0.88      3978
+           donna       0.62      0.12      0.20      1076
+    
+       micro avg       0.80      0.80      0.80      5054
+       macro avg       0.48      0.37      0.36      5054
+    weighted avg       0.77      0.80      0.74      5054
+
+
+### IT5 Age no pre-training:
+                  precision    recall  f1-score   support
+    
+          errore       0.00      0.00      0.00         0
+            0-19       0.49      0.16      0.24       465
+           20-29       0.33      0.68      0.44      1534
+           30-39       0.21      0.11      0.14      1157
+           40-49       0.20      0.12      0.15       905
+          50-100       0.29      0.19      0.23       993
+    
+       micro avg       0.30      0.30      0.30      5054
+       macro avg       0.25      0.21      0.20      5054
+    weighted avg       0.29      0.30      0.26      5054
