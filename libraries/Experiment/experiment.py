@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, TrainingArguments, Trainer
 from datasets import load_dataset, DatasetDict, load_metric
 import numpy as np
-from transformers import AutoModelForSequenceClassification, AutoConfig
+from transformers import AutoModelForSequenceClassification, AutoConfig, AutoModel, BertForSequenceClassification
 
 
 class NLMExperiment:
@@ -25,7 +25,7 @@ class NLMExperiment:
             self.model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=self.num_labels)
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         else:
-            config = AutoConfig.from_pretrained("bert-base-cased", num_labels=self.num_labels)
+            config = AutoConfig.from_pretrained(model_name, num_labels=self.num_labels)
             self.model = AutoModelForSequenceClassification.from_config(config)
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
